@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Innovise</title>
+    <link
+      rel="shortcut icon"
+      href="components/images/logo.ico"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+    />
+    <link rel="stylesheet" href="styles/fonts.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" id="theme-style" />
+  </head>
+  <body>
+    <header id="header">
+      <div class="container">
+        <div class="flex">
+          <a href="index.html"><i class="logo"></i></a>
+          <nav>
+            <div class="menu-toggle" id="menu-toggle">
+              <i class="fa fa-bars"></i>
+              <!-- Ícone do hambúrguer -->
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+              <li><a href="#home">Início</a></li>
+              <li><a href="#servicos">Serviços</a></li>
+              <li><a href="#sobre">Sobre</a></li>
+              <li><a href="#cases">Cases</a></li>
+              <li><a href="#contato">Contatos</a></li>
+            </ul>
+          </nav>
+
+          <!--div class="btn-login">
+                    <a href="login.html"><button class="btn">Entre ou Cadastre-se</button></a>
+                    </div>-->
+
+          <div class="btn-login">
+            <button class="btn" id="openModalBtn">Entre ou Cadastre-se</button>
+          </div>
+        </div>
+        <!--flex-->
+      </div>
+      <!--container-->
+    </header>
+
+    <!-- Botão de Menu -->
+    <button id="menu-toggle">Menu</button>
+    <nav id="nav-menu" class="nav-menu">
+      <!-- Conteúdo do Menu -->
+    </nav>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+
+        <!-- Formulário de Login -->
+        <form class="form login-form">
+          <div class="flex-column">
+            <label>Email </label>
+          </div>
+          <div class="inputForm">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              viewBox="0 0 32 32"
+              height="20"
+            >
+              <g data-name="Layer 3" id="Layer_3">
+                <path
+                  d="m30.853 13.87a15 15 0 0 0 -29.729 4.082 15.1 15.1 0 0 0 12.876 12.918 15.6 15.6 0 0 0 2.016.13 14.85 14.85 0 0 0 7.715-2.145 1 1 0 1 0 -1.031-1.711 13.007 13.007 0 1 1 5.458-6.529 2.149 2.149 0 0 1 -4.158-.759v-10.856a1 1 0 0 0 -2 0v1.726a8 8 0 1 0 .2 10.325 4.135 4.135 0 0 0 7.83.274 15.2 15.2 0 0 0 .823-7.455zm-14.853 8.13a6 6 0 1 1 6-6 6.006 6.006 0 0 1 -6 6z"
+                ></path>
+              </g>
+            </svg>
+            <input placeholder="Insira seu Email" class="input" type="text" />
+          </div>
+
+          <div class="flex-column">
+            <label>Senha </label>
+          </div>
+          <div class="inputForm">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              viewBox="-64 0 512 512"
+              height="20"
+            >
+              <path
+                d="m336 512h-288c-26.453125 0-48-21.523438-48-48v-224c0-26.476562 21.546875-48 48-48h288c26.453125 0 48 21.523438 48 48v224c0 26.476562-21.546875 48-48 48zm-288-288c-8.8125 0-16 7.167969-16 16v224c0 8.832031 7.1875 16 16 16h288c8.8125 0 16-7.167969 16-16v-224c0-8.832031-7.1875-16-16-16zm0 0"
+              ></path>
+              <path
+                d="m304 224c-8.832031 0-16-7.167969-16-16v-80c0-52.929688-43.070312-96-96-96s-96 43.070312-96 96v80c0 8.832031-7.167969 16-16 16s-16-7.167969-16-16v-80c0-70.59375 57.40625-128 128-128s128 57.40625 128 128v80c0 8.832031-7.167969 16-16 16zm0 0"
+              ></path>
+            </svg>
+            <input
+              placeholder="Insira sua Senha"
+              class="input"
+              type="password"
+            />
+          </div>
+
+          <div class="flex-row">
+            <span class="span">Esqueceu a senha?</span>
+          </div>
+          <button class="button-submit">Entre</button>
+          <p class="p">
+            Não tem uma conta?
+            <span class="span" id="show-register">Registre-se</span>
+          </p>
+          <p class="p line">Ou com</p>
+          <div class="flex-row">
+            <button class="btn-google">
+              <i class="bi bi-google"></i>Google
+            </button>
+            <button class="btn-github">
+              <i class="bi bi-github"></i>Github
+            </button>
+          </div>
+        </form>
+
+        <!-- Formulário de Registro -->
+        <form class="form register-form" style="display: none">
+          <div class="flex-column">
+            <label>Nome </label>
+          </div>
+          <div class="inputForm">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="12" cy="7" r="5" />
+              <path d="M5 20c0-5 7-8 7-8s7 3 7 8" />
+            </svg>
+            <input placeholder="Insira seu Nome" class="input" type="text" />
+          </div>
+
+          <div class="flex-column">
+            <label>Email </label>
+          </div>
+          <div class="inputForm">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              viewBox="0 0 32 32"
+              height="20"
+            >
+              <path
+                d="m30.853 13.87a15 15 0 0 0 -29.729 4.082 15.1 15.1 0 0 0 12.876 12.918 15.6 15.6 0 0 0 2.016.13 14.85 14.85 0 0 0 7.715-2.145 1 1 0 1 0 -1.031-1.711 13.007 13.007 0 1 1 5.458-6.529 2.149 2.149 0 0 1 -4.158-.759v-10.856a1 1 0 0 0 -2 0v1.726a8 8 0 1 0 .2 10.325 4.135 4.135 0 0 0 7.83.274 15.2 15.2 0 0 0 .823-7.455zm-14.853 8.13a6 6 0 1 1 6-6 6.006 6.006 0 0 1 -6 6z"
+              ></path>
+            </svg>
+            <input placeholder="Insira seu Email" class="input" type="text" />
+          </div>
+
+          <div class="flex-column">
+            <label>Senha </label>
+          </div>
+          <div class="inputForm">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              viewBox="-64 0 512 512"
+              height="20"
+            >
+              <path
+                d="m336 512h-288c-26.453125 0-48-21.523438-48-48v-224c0-26.476562 21.546875-48 48-48h288c26.453125 0 48 21.523438 48 48v224c0 26.476562-21.546875 48-48 48zm-288-288c-8.8125 0-16 7.167969-16 16v224c0 8.832031 7.1875 16 16 16h288c8.8125 0 16-7.167969 16-16v-224c0-8.832031-7.1875-16-16-16zm0 0"
+              ></path>
+              <path
+                d="m304 224c-8.832031 0-16-7.167969-16-16v-80c0-52.929688-43.070312-96-96-96s-96 43.070312-96 96v80c0 8.832031-7.167969 16-16 16s-16-7.167969-16-16v-80c0-70.59375 57.40625-128 128-128s128 57.40625 128 128v80c0 8.832031-7.167969 16-16 16zm0 0"
+              ></path>
+            </svg>
+            <input
+              placeholder="Insira sua Senha"
+              class="input"
+              type="password"
+            />
+          </div>
+
+          <div class="flex-column">
+            <label>Confirmar Senha </label>
+          </div>
+          <div class="inputForm">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              viewBox="-64 0 512 512"
+              height="20"
+            >
+              <path
+                d="m336 512h-288c-26.453125 0-48-21.523438-48-48v-224c0-26.476562 21.546875-48 48-48h288c26.453125 0 48 21.523438 48 48v224c0 26.476562-21.546875 48-48 48zm-288-288c-8.8125 0-16 7.167969-16 16v224c0 8.832031 7.1875 16 16 16h288c8.8125 0 16-7.167969 16-16v-224c0-8.832031-7.1875-16-16-16zm0 0"
+              ></path>
+              <path
+                d="m304 224c-8.832031 0-16-7.167969-16-16v-80c0-52.929688-43.070312-96-96-96s-96 43.070312-96 96v80c0 8.832031-7.167969 16-16 16s-16-7.167969-16-16v-80c0-70.59375 57.40625-128 128-128s128 57.40625 128 128v80c0 8.832031-7.167969 16-16 16zm0 0"
+              ></path>
+            </svg>
+            <input
+              placeholder="Confirme sua Senha"
+              class="input"
+              type="password"
+            />
+          </div>
+
+          <button class="button-submit">Registrar</button>
+          <p class="p">
+            Já tem uma conta? <span class="span" id="show-login">Entrar</span>
+          </p>
+        </form>
+      </div>
+    </div>
+
+    <main>
+      <section id="home" class="banner" data-aos="fade-right">
+        <div class="container">
+          <div class="flex">
+            <div class="txt-topo-site" data-aos="fade-right">
+              <h2>Novas perspectivas,</h2>
+              <h2><span>Novos horizontes.</span></h2>
+              <p>
+                Na Innovise, somos desbravadores de novos horizontes
+                empresariais. Nossa jornada é impulsionada pela busca incessante
+                por excelência na consultoria e capacitação em gestão
+                empresarial.
+              </p>
+              <div class="button"></div>
+              <a href="#">
+                <button class="btn-contato" data-aos="fade-right">
+                  Entre em contato
+                </button>
+              </a>
+            </div>
+            <!--txt-topo-site-->
+
+            <div class="img-topo-site" data-aos="fade-right">
+              <img src="components/images/juntos-innovise.jpg" alt="" />
+            </div>
+            <!--img-topo-site-->
+          </div>
+          <!--flex-->
+        </div>
+        <!--container-->
+      </section>
+      <!--home-->
+
+        <section  id="servicos" class="especialidades"  data-aos="fade-up">
+          <div class="container">
+            
+            <h2 class="titulo">Nossos <span>Serviços</span></h2>
+            <div class="flex">
+              <div class="especialidades-box">
+                <i
+                  ><img
+                    src="components/images/Prancheta 16 cópiaicon.png"
+                    alt="" /></i
+                ><!--Consultoria estrategica-->
+                <h3>Consultoria Estratégica</h3>
+                <p style=>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic
+                  aperiam unde saepe vel repellat aliquid nulla optio! Sed
+                  perferendis cumque, voluptatum blanditiis
+                </p>
+              </div>
+              <!--especialidades-->
+
+              <div class="especialidades-box">
+                <i
+                  ><img
+                    src="components/images/Prancheta 7 cópiaicon.png"
+                    alt="" /></i
+                ><!--Consultoria rh-->
+                <h3>Consultoria de RH</h3>
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Dolores consequuntur placeat doloremque itaque, dignissimos
+                  assumenda labore officia nihil fuga non possimus dolorum ea.
+                </p>
+              </div>
+              <!--especialidades-->
+
+              <div class="especialidades-box">
+                <i>
+                  <img
+                    src="components/images/Prancheta 13 cópiaicon.png"
+                    alt="" /></i
+                ><!--Consultoria financeira-->
+                <h3>Consultoria Financeira</h3>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo,
+                  et ipsa. Et sequi commodi iusto pariatur nihil, impedit natus
+                  ipsum minus eveniet adipisci ipsam aspernatur saepe.
+                </p>
+              </div>
+              <!--especialidades-->
+            </div>
+            <!--flex-->
+        
+          <!--container-->
+        </section>
+      </div>
+      </div>
+      <!--servicos-->
+      <div
+        style="padding: 80px 4%; box-shadow: 0 0 40px 10px #00000050 !important"
+      >
+        <section id="sobre" class="sobre" data-aos="fade-right">
+          <div class="container">
+            <div class="flex">
+              <div class="img-sobre" data-aos="fade-right">
+                <img src="components/images/empresarial-innovise.jpg" alt="" />
+              </div>
+              <!--img-sobre-->
+
+              <div class="txt-sobre" data-aos="fade-right">
+                <h2>Quem é a <span>Innovise?</span></h2>
+                <p>
+                  Na Innovise, somos uma consultoria visionária dedicada a gerar
+                  soluções que vão além das expectativas. Nossa abordagem
+                  centrada no cliente nos permite ganhar reconhecimento de forma
+                  orgânica, destacando-nos em diversas áreas de atuação.
+                </p>
+                <h3>Por que Escolher a <span>Innovise?</span></h3>
+                <p>
+                  Optar pela Innovise é escolher uma parceria estratégica que se
+                  preocupa genuinamente com o seu sucesso. Com uma equipe
+                  altamente qualificada e um compromisso inabalável com a
+                  qualidade, estamos prontos para ajudar sua empresa a alcançar
+                  novos patamares.
+                </p>
+                <div class="btn-social" data-aos="fade-right">
+                  <a href="#"
+                    ><button><i class="bi bi-whatsapp"></i></button
+                  ></a>
+                  <a href="#"
+                    ><button><i class="bi bi-instagram"></i></button
+                  ></a>
+                  <a href="#"
+                    ><button><i class="bi bi-linkedin"></i></button
+                  ></a>
+                </div>
+                <!--btn-social-->
+              </div>
+              <!--txt-sobre-->
+            </div>
+            <!--flex-->
+          </div>
+          <!--container-->
+        </section>
+      </div>
+
+      <section id="cases" class="portfolio" data-aos="fade-up">
+        <div class="container">
+          <h2 class="titulo">Nossos <span>Casos</span></h2>
+          <div class="flex">
+            <div
+              class="img-port"
+              style="background-image: url(components/images/site.jpg)"
+            >
+              <div class="overlay">Projeto 1</div>
+            </div>
+            
+
+            <div
+              class="img-port"
+              style="background-image: url(components/images/site.jpg)"
+            >
+              <div class="overlay">Projeto 2</div>
+            </div>
+           
+
+            <div
+              class="img-port"
+              style="background-image: url(components/images/site.jpg)"
+            >
+              <div class="overlay">Projeto 3</div>
+            </div>
+         
+          </div>
+       
+        </div>
+        <!--container-->
+      </section>
+
+      <section id="contato" class="formulario" data-aos="fade-right">
+        <div class="container" data-aos="fade-right">
+          <h2 style="margin-top: 96px;" class="titulo" data-aos="fade-right">
+            Entre em <span>Contato</span>
+          </h2>
+
+          <form action="" data-aos="fade-right">
+            <input type="text" placeholder="Nome" />
+            <input type="email" placeholder="E-mail" />
+            <input type="text" placeholder="Celular" />
+            <textarea
+              name=""
+              id=""
+              placeholder="Sua Mensagem"
+              required
+            ></textarea>
+
+            <div class="btn-enviar"><input type="submit" value="ENVIAR" /></div>
+          </form>
+        </div>
+        <!--container-->
+      </section>
+      <!--contato-->
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-links">
+            <a href="#">Sobre Nós</a>
+            <a href="#">Contato</a>
+            <a href="#">Política de Privacidade</a>
+            <a href="#">Termos de Serviço</a>
+          </div>
+          <div class="footer-social">
+            <a href="#" target="_blank"><i class="bi bi-facebook"></i></a>
+            <a href="#" target="_blank"><i class="bi bi-instagram"></i></a>
+            <a href="#" target="_blank"><i class="bi bi-twitter"></i></a>
+            <a href="#" target="_blank"><i class="bi bi-pinterest"></i></a>
+          </div>
+          <div class="footer-credits">
+            <p>&copy; 2024 Innovise. Todos os direitos reservados.</p>
+            <p>Desenvolvido por:</p>
+            <ul>
+              <li>
+                <a href="https://github.com/ErmesonDouglas" target="_blank"
+                  >Ermeson</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://linkedin.com/in/wesley-vitorino-08a0b0228/"
+                  target="_blank"
+                  >Wesley</a
+                >
+              </li>
+              <li>
+                <a href="https://github.com/breno-aj" target="_blank">Breno</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="menu.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const menuBtn = document.getElementById("menu-btn");
+        const navMenu = document.querySelector(".nav-menu");
+
+        menuBtn.addEventListener("click", () => {
+          navMenu.classList.toggle("menu-active");
+        });
+      });
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1200, // duração da animação
+      });
+    </script>
+
+    <script>
+      // Obtenha o modal
+      var modal = document.getElementById("myModal");
+
+      // Obtenha o botão que abre o modal
+      var btn = document.getElementById("openModalBtn"); // Assumindo que você tenha um botão com esse ID para abrir o modal
+
+      // Obtenha o elemento <span> que fecha o modal
+      var span = document.getElementsByClassName("close")[0];
+
+      // Quando o usuário clicar no botão, abra o modal
+      btn.onclick = function () {
+        modal.style.display = "block";
+      };
+
+      // Quando o usuário clicar no <span> (x), feche o modal
+      span.onclick = function () {
+        modal.style.display = "none";
+      };
+
+      // Quando o usuário clicar em qualquer lugar fora do modal, feche-o
+      window.onclick = function (event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      };
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var modal = document.getElementById("myModal");
+        var closeBtn = document.querySelector(".close");
+        var showRegisterBtn = document.getElementById("show-register");
+        var showLoginBtn = document.getElementById("show-login");
+        var loginForm = document.querySelector(".login-form");
+        var registerForm = document.querySelector(".register-form");
+
+        // Mostrar o modal
+        function openModal() {
+          modal.style.display = "block";
+        }
+
+        // Fechar o modal
+        function closeModal() {
+          modal.style.display = "none";
+        }
+
+        // Alternar para o formulário de registro
+        function showRegisterForm() {
+          loginForm.style.display = "none";
+          registerForm.style.display = "block";
+        }
+
+        // Alternar para o formulário de login
+        function showLoginForm() {
+          registerForm.style.display = "none";
+          loginForm.style.display = "block";
+        }
+
+        closeBtn.addEventListener("click", closeModal);
+        showRegisterBtn.addEventListener("click", showRegisterForm);
+        showLoginBtn.addEventListener("click", showLoginForm);
+
+        // Opcional: Fechar o modal se o usuário clicar fora dele
+        window.onclick = function (event) {
+          if (event.target == modal) {
+            closeModal();
+          }
+        };
+      });
+    </script>
+
+    <script>
+      // script.js
+
+      document.addEventListener("DOMContentLoaded", function () {
+        // Menu Toggle
+        const menuToggle = document.getElementById("menu-toggle");
+        const navMenu = document.getElementById("nav-menu");
+
+        if (menuToggle && navMenu) {
+          menuToggle.addEventListener("click", function () {
+            navMenu.classList.toggle("active");
+          });
+        }
+
+        // Modal Management
+        const modal = document.getElementById("myModal");
+        const closeBtn = document.querySelector(".close");
+        const showLoginBtn = document.getElementById("show-login");
+        const showRegisterBtn = document.getElementById("show-register");
+
+        const loginForm = document.querySelector(".login-form");
+        const registerForm = document.querySelector(".register-form");
+
+        // Open Modal
+        function openModal() {
+          modal.style.display = "block";
+        }
+
+        // Close Modal
+        function closeModal() {
+          modal.style.display = "none";
+        }
+
+        if (closeBtn) {
+          closeBtn.addEventListener("click", closeModal);
+        }
+
+        // Show Login Form
+        if (showLoginBtn) {
+          showLoginBtn.addEventListener("click", function () {
+            loginForm.style.display = "flex";
+            registerForm.style.display = "none";
+          });
+        }
+
+        // Show Register Form
+        if (showRegisterBtn) {
+          showRegisterBtn.addEventListener("click", function () {
+            loginForm.style.display = "none";
+            registerForm.style.display = "flex";
+          });
+        }
+
+        // Optional: Close modal if clicking outside of the modal-content
+        window.addEventListener("click", function (event) {
+          if (event.target === modal) {
+            closeModal();
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
